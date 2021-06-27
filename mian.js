@@ -31,3 +31,31 @@ window.addEventListener('scroll', function () {
         header.classList.remove('scroll')
     }
 })
+
+//TESTIMONIAL SWIPER
+const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    pagination: {
+        el: '.swiper-pagination'
+    },
+    mousewheel: true,
+    keybord: true
+});
+
+/* SCROLLREAVEL , mostrar elemento  quando der scroll na pagina */
+const scrollReveal = ScrollReveal({
+    origin: 'top',
+    distance: '30px',
+    duration: 700,
+    reset: true
+})
+
+scrollReveal.reveal(
+    `#home .image, #home .text,
+#about .image, #about .text,
+#services header, #services .card,
+#testimonial header, #testimonials .testimonial,
+#contact .text, #contact .links
+`,
+    { interval: 100 }
+)
