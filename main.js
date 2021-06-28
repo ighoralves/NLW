@@ -20,8 +20,8 @@ for (const link of links) {
 /* mudar o header da página quando der scroll */
 const header = document.querySelector('#header')
 const navHeight = header.offsetHeight
-function changeHeaderWhenScroll() {
 
+function changeHeaderWhenScroll() {
   if (window.scrollY >= navHeight) {
     // scroll é maior que a altura do header
     header.classList.add('scroll')
@@ -68,8 +68,8 @@ scrollReveal.reveal(
 
 /* Botão voltar para o topo */
 const backToTopButton = document.querySelector('.back-to-top')
-function backToTop() {
 
+function backToTop() {
   if (window.scrollY >= 560) {
     backToTopButton.classList.add('show')
   } else {
@@ -77,10 +77,9 @@ function backToTop() {
   }
 }
 
-// menu ativo conforme a seção visivel na pagina
-const sections = document.querySelector('main section [id]')
+/* Menu ativo conforme a seção visível na página */
+const sections = document.querySelectorAll('main section[id]')
 function activateMenuAtCurrentSection() {
-
   const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
 
   for (const section of sections) {
@@ -95,16 +94,13 @@ function activateMenuAtCurrentSection() {
       document
         .querySelector('nav ul li a[href*=' + sectionId + ']')
         .classList.add('active')
-
     } else {
       document
         .querySelector('nav ul li a[href*=' + sectionId + ']')
         .classList.remove('active')
     }
-
   }
 }
-
 
 /* When Scroll */
 window.addEventListener('scroll', function () {
@@ -112,5 +108,3 @@ window.addEventListener('scroll', function () {
   backToTop()
   activateMenuAtCurrentSection()
 })
-
-
